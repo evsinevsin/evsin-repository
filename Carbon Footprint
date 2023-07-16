@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <title>Emission Omission</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+    <style type="text/css">
+
+        body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3em;
+        
+    }
+
+        nav li, form {
+        display:inline;
+    }
+
+    header {
+            background-color: #ddd;
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+        }
+
+        footer {
+          margin-top: 25px;
+            background-color: #ddd;
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+
+        h1 {
+          margin: 0;
+        }
+
+        nav ul {  
+        list-style-type: none;
+        margin: 0;
+        padding: 15px;
+        }
+
+      nav ul li {
+      display: inline;
+      margin-right: 5px;
+        }
+
+      nav ul li a {
+      text-decoration: none;
+        }
+
+        a {
+            text-decoration: none; 
+            color:rgb(19, 160, 207);
+            margin:0.5em
+        }
+        a:hover {
+            color:rgb(153, 214, 235);
+        }
+
+        
+        table {
+            margin-top: 20px;
+            padding: 20px;
+            border-collapse: collapse;
+            cursor: pointer;
+            inset-block-start: 0;
+            user-select: none;
+            position: sticky; 
+            border-width: 150px; 
+            border-color: white; 
+            background-color: white; 
+            text-align: left; 
+            border: 1px solid; 
+            width: 100%;}
+        th  {border:1px solid black; padding: 15px;}   
+        td {border:1px solid black; padding: 15px;}
+        tr:hover {background-color: lightgrey}
+        tfoot {text-align: center;}
+
+        th, td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        th:hover {
+            cursor: pointer;
+        }
+
+        img {
+          margin-top: 20px;
+          float: right;
+        }
+
+        @media screen and (min-device-width: 960px) and (max-resolution: 150ppi) {
+            main nav li {display:block}
+        }
+
+        @media screen and (min-device-width: 480px) and (min-resolution: 150ppi) {
+            main nav li {display:block}
+        }
+
+    </style>
+    <script src=""></script>
+</head>
+<body>
+    <header>
+        <nav id="navigtion-bar-container" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <ul>
+                <li>
+                    <form> 
+                        <input type="text" name="suche" placeholder="Suche">
+                    </form>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#twitter">Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="#instagram">Instagram</a></li>
+                <li class="nav-item"><a class="nav-link" href="#facebook">Facebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <img src="C:\Users\Win10\Desktop\EmissionOmission.png" alt="Emission Omission" style="width:300px;height:200px;margin:20px;">
+        <nav>
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="#mainpage">Hauptseite</a></li>
+                <li class="nav-item"><a class="nav-link" href="#emtable">Emissionstabelle</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aboutus">Über uns</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h1>Willkommen bei Emission Omission</h1>
+
+            <p>Wir informieren Sie über die schädlichen Emissionen großer Unternehmen!</p>
+        </section>
+        <section>
+            <h2>Emissionstabelle</h2>
+            <p>Unsere Emissionstabelle gibt Ihnen Auskunft über die Emissionen nach Land und Unternehmen.</p>
+        </section>
+        
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtern nach Land">
+        <table id="myTable" vspace="20px">
+            <tr>
+              <th onclick="sortTable(0)">Land</th>
+              <th onclick="sortTable(1)">Unternehmen</th>
+              <th>Branche</th>
+              <th>Hauptsitz</th>
+              <th>CO²-Emissionen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kanada</td>
+                <td>Air Canada</td>
+                <td>Airline</td>
+                <td>Montreal</td>
+                <td>6,5</td>
+            </tr>
+            <tr>
+                <td>USA</td>
+                <td>Apple</td>
+                <td>Technologie</td>
+                <td>Cupertino</td>
+                <td>3,5</td>
+            </tr>
+            <tr>
+                <td>Mexiko</td>
+                <td>Grupo Bimbo</td>
+                <td>Nahrungsmittel</td>
+                <td>Mexiko-Stadt</td>
+                <td>1,5</td>
+            </tr>
+            <tr>
+                <td>Brasilien</td>
+                <td>Chevron Brasil</td>
+                <td>Öl und Gas</td>
+                <td>Rio de Janeiro</td>
+                <td>5,3</td>
+            </tr>
+            <tr>
+                <td>Frankreich</td>
+                <td>Renault</td>
+                <td>Automobile</td>
+                <td>Boulogne-Billancourt</td>
+                <td>4,5</td>
+            </tr>
+            <tr>
+                <td>Spanien</td>
+                <td>Repsol YPF</td>
+                <td>Öl und Gas</td>
+                <td>Madrid</td>
+                <td>7,5</td>
+            </tr>
+            <tr>
+                <td>England</td>
+                <td>LyondellBasell Industries</td>
+                <td>Chemie</td>
+                <td>London</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Deutschland</td>
+                <td>BASF</td>
+                <td>Chemie</td>
+                <td>Ludwigshafen</td>
+                <td>9,8</td>
+              </tr>
+              <tr>
+                <td>Nigeria</td>
+                <td>Zenith Bank</td>
+                <td>Banken</td>
+                <td>Victoria Island</td>
+                <td>0,1</td>
+              </tr>
+              <tr>
+                <td>Russland</td>
+                <td>Gazprom</td>
+                <td>Öl und Gas</td>
+                <td>Moskau</td>
+                <td>9,4</td>
+            </tr>
+            <tr>
+                <td>Indien</td>
+                <td>Bharti Airtel</td>
+                <td>Telekommunikation</td>
+                <td>Neu-Delhi</td>
+                <td>1,7</td>
+            </tr>
+            <tr>
+                <td>China</td>
+                <td>SAIC Motor</td>
+                <td>Automobile</td>
+                <td>Shanghai</td>
+                <td>4,2</td>
+            </tr>
+            <tr>
+                <td>Japan</td>
+                <td>Toyota Motor</td>
+                <td>Automobile</td>
+                <td>Toyota</td>
+                <td>5,7</td>
+            </tr>
+            <tr>
+                <td>Australien</td>
+                <td>Woolworths</td>
+                <td>Einzelhandel</td>
+                <td>Sydney</td>
+                <td>0,2</td>
+            </tr>
+        </tbody>
+        <p>*Emissionsangaben in Millionen Tonnen</p>
+        </table>
+        
+    </main>
+    <footer id="footer-content">
+        <nav>
+            <li class="nav-item"><a class="nav-link" href="#datenschutz">Datenschutz</a></li> 
+            <li class="nav-item"><a class="nav-link" href="#impressum">Impressum</a></li>
+        </nav>
+    </footer>
+    <script>
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementById("myTable");
+          switching = true;
+          dir = "asc";
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;
+            } else {
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+        </script>
+        <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
