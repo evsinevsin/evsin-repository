@@ -531,14 +531,14 @@ summary {
 .sidebar-navigation ul {
   list-style: none;
   height: 100%;
-  background-color: #e9ecef;
+  /* background-color: #e9ecef; */
   padding: 40px 40px 40px 20px;
   text-align: center;
 }
 
 .sidebar-navigation ul li a {
   text-decoration: none;
-  color: #818181;
+  /* color: #818181; */
 }
 
 .sidebar-links {
@@ -563,8 +563,8 @@ summary {
   border-radius: 10px;
   border: none;
   padding: 10px;
-  background-color: #e9ecef;
-  color: #818181;
+  /* background-color: #e9ecef; */
+  /* color: #818181; */
 }
 
 .sidebar-steuerung button:first-child {
